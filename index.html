@@ -1,273 +1,349 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BNC - Chatbot Asistente</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="section">
-            <div class="flexcontainer">
-                <div class="columns">
-                    <div class="logplace">
-                        <img src="BNCLogoSmall-big.png" height=70S&width=180" alt="BNC Logo">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BNC - Chatbot Asistente</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <div class="section">
+                <div class="flexcontainer">
+                    <div class="columns">
+                        <div class="logplace">
+                            <img
+                                src="BNCLogoSmall-Big.png"
+                                height="70"
+                                width="180"
+                                alt="BNC Logo"
+                            />
+                        </div>
                     </div>
-                </div>
-                <div class="columns">
-                    <div class="header-lnk">
-                        <a href="#inicio">Inicio</a>
-                        <a href="#vacaciones">Agenda Vacaciones</a>
+                    <div class="columns">
+                        <div class="header-lnk">
+                            <a href="#inicio">Inicio</a>
+                            <a href="#vacaciones">Agenda Vacaciones</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <!-- Simplified hero with BNC branding -->
-        <section class="hero-section">
-            <div class="container">
+        <!-- Main Content -->
+        <main>
+            <!-- Hero Section -->
+            <!-- Simplified hero with BNC branding -->
+            <section class="hero-section">
+                <div class="container">
+                    <div class="text-center">
+                        <h1 class="custom-h1 text-blue">
+                            Banco Nacional de Crédito
+                        </h1>
+                        <p class="custom-h2 text-orange">
+                            Portal Interno de Gestión
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content with Sidebar -->
+            <section class="py-4">
+                <div class="container">
+                    <div class="flex flex-wrap">
+                        <!-- Main Content Area -->
+                        <!-- Removed client-facing features, kept simple company info -->
+                        <div class="main-content">
+                            <h2 class="text-blue pb-2">
+                                Bienvenido al Portal BNC
+                            </h2>
+
+                            <!-- Image Grid -->
+                            <div class="image-grid pb-3">
+                                <div class="image-card">
+                                    <img
+                                        src="oficinasbnc.jpg"
+                                        alt="Oficina BNC"
+                                    />
+                                    <h3 class="text-blue pt-1">
+                                        Nuestras Oficinas
+                                    </h3>
+                                    <p>
+                                        Espacios modernos diseñados para la
+                                        excelencia
+                                    </p>
+                                </div>
+                                <div class="image-card">
+                                    <img src="equipobnc.png" alt="Equipo BNC" />
+                                    <h3 class="text-blue pt-1">
+                                        Nuestro Equipo
+                                    </h3>
+                                    <p>
+                                        Profesionales comprometidos con la
+                                        excelencia
+                                    </p>
+                                </div>
+                                <div class="image-card">
+                                    <img
+                                        src="innovacionbnc.jpg"
+                                        alt="Innovación"
+                                    />
+                                    <h3 class="text-blue pt-1">Innovación</h3>
+                                    <p>
+                                        Tecnología al servicio de nuestros
+                                        clientes
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Info Section -->
+                            <div class="info-section">
+                                <div class="info-card">
+                                    <h3 class="text-blue">Nuestra Misión</h3>
+                                    <p>
+                                        Ofrecer soluciones financieras
+                                        innovadoras que impulsen el crecimiento
+                                        económico y el bienestar de nuestros
+                                        clientes, con un compromiso firme hacia
+                                        la excelencia y la responsabilidad
+                                        social.
+                                    </p>
+                                </div>
+                                <div class="info-card">
+                                    <h3 class="text-blue">Nuestros Valores</h3>
+                                    <p>
+                                        Integridad, compromiso, innovación y
+                                        excelencia en el servicio son los
+                                        pilares fundamentales que guían cada una
+                                        de nuestras acciones y decisiones.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vacation Sidebar -->
+                        <aside class="vacation-sidebar">
+                            <div class="sidebar-header">
+                                <h2>Agenda de Vacaciones</h2>
+                            </div>
+                            <div class="sidebar-content">
+                                <div class="calendar-section">
+                                    <h3>Disponibilidad</h3>
+                                    <div class="month-selector">
+                                        <button
+                                            class="month-nav"
+                                            id="prevMonth"
+                                        >
+                                            &lt;
+                                        </button>
+                                        <span
+                                            class="current-month"
+                                            id="currentMonth"
+                                            >Enero 2025</span
+                                        >
+                                        <button
+                                            class="month-nav"
+                                            id="nextMonth"
+                                        >
+                                            &gt;
+                                        </button>
+                                    </div>
+                                    <div class="calendar" id="calendar"></div>
+                                </div>
+
+                                <div class="vacation-list">
+                                    <h3>Personal de Vacaciones</h3>
+                                    <div class="vacation-item">
+                                        <div class="vacation-employee">
+                                            <strong>María González</strong>
+                                            <span class="vacation-dept"
+                                                >Atención al Cliente</span
+                                            >
+                                        </div>
+                                        <div class="vacation-dates">
+                                            <span>15 Ene - 29 Ene 2025</span>
+                                        </div>
+                                    </div>
+                                    <div class="vacation-item">
+                                        <div class="vacation-employee">
+                                            <strong>Carlos Rodríguez</strong>
+                                            <span class="vacation-dept"
+                                                >Operaciones</span
+                                            >
+                                        </div>
+                                        <div class="vacation-dates">
+                                            <span>05 Feb - 19 Feb 2025</span>
+                                        </div>
+                                    </div>
+                                    <div class="vacation-item">
+                                        <div class="vacation-employee">
+                                            <strong>Ana Martínez</strong>
+                                            <span class="vacation-dept"
+                                                >Recursos Humanos</span
+                                            >
+                                        </div>
+                                        <div class="vacation-dates">
+                                            <span>20 Feb - 06 Mar 2025</span>
+                                        </div>
+                                    </div>
+                                    <div class="vacation-item">
+                                        <div class="vacation-employee">
+                                            <strong>Luis Pérez</strong>
+                                            <span class="vacation-dept"
+                                                >Tecnología</span
+                                            >
+                                        </div>
+                                        <div class="vacation-dates">
+                                            <span>10 Mar - 24 Mar 2025</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn--naranja w-100">
+                                    Solicitar Vacaciones
+                                </button>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container py-3">
                 <div class="text-center">
-                    <h1 class="custom-h1 text-blue">Banco Nacional de Crédito</h1>
-                    <p class="custom-h2 text-orange">Portal Interno de Gestión</p>
+                    <img
+                        src="logobnc.png"
+                        alt="BNC Logo"
+                        class="footer__logo"
+                    />
+                    <ul class="foot-menu">
+                        <li><a href="#terminos">Términos y Condiciones</a></li>
+                        <li>
+                            <a href="#privacidad">Política de Privacidad</a>
+                        </li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
                 </div>
             </div>
-        </section>
-
-        <!-- Content with Sidebar -->
-        <section class="py-4">
-            <div class="container">
-                <div class="flex flex-wrap">
-                    <!-- Main Content Area -->
-                    <!-- Removed client-facing features, kept simple company info -->
-                    <div class="main-content">
-                        <h2 class="text-blue pb-2">Bienvenido al Portal BNC</h2>
-                        
-                        <!-- Image Grid -->
-                        <div class="image-grid pb-3">
-                            <div class="image-card">
-                                <img src="oficinasbnc.jpg" alt="Oficina BNC">
-                                <h3 class="text-blue pt-1">Nuestras Oficinas</h3>
-                                <p>Espacios modernos diseñados para la excelencia</p>
-                            </div>
-                            <div class="image-card">
-                                <img src="equipobnc.png" alt="Equipo BNC">
-                                <h3 class="text-blue pt-1">Nuestro Equipo</h3>
-                                <p>Profesionales comprometidos con la excelencia</p>
-                            </div>
-                            <div class="image-card">
-                                <img src="innovacionbnc.jpg" alt="Innovación">
-                                <h3 class="text-blue pt-1">Innovación</h3>
-                                <p>Tecnología al servicio de nuestros clientes</p>
-                            </div>
-                        </div>
-
-                        <!-- Info Section -->
-                        <div class="info-section">
-                            <div class="info-card">
-                                <h3 class="text-blue">Nuestra Misión</h3>
-                                <p>Ofrecer soluciones financieras innovadoras que impulsen el crecimiento económico y el bienestar de nuestros clientes, con un compromiso firme hacia la excelencia y la responsabilidad social.</p>
-                            </div>
-                            <div class="info-card">
-                                <h3 class="text-blue">Nuestros Valores</h3>
-                                <p>Integridad, compromiso, innovación y excelencia en el servicio son los pilares fundamentales que guían cada una de nuestras acciones y decisiones.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Vacation Sidebar -->
-                    <aside class="vacation-sidebar">
-                        <div class="sidebar-header">
-                            <h2>Agenda de Vacaciones</h2>
-                        </div>
-                        <div class="sidebar-content">
-                            <div class="calendar-section">
-                                <h3>Disponibilidad</h3>
-                                <div class="month-selector">
-                                    <button class="month-nav" id="prevMonth">&lt;</button>
-                                    <span class="current-month" id="currentMonth">Enero 2025</span>
-                                    <button class="month-nav" id="nextMonth">&gt;</button>
-                                </div>
-                                <div class="calendar" id="calendar"></div>
-                            </div>
-
-                            <div class="vacation-list">
-                                <h3>Personal de Vacaciones</h3>
-                                <div class="vacation-item">
-                                    <div class="vacation-employee">
-                                        <strong>María González</strong>
-                                        <span class="vacation-dept">Atención al Cliente</span>
-                                    </div>
-                                    <div class="vacation-dates">
-                                        <span>15 Ene - 29 Ene 2025</span>
-                                    </div>
-                                </div>
-                                <div class="vacation-item">
-                                    <div class="vacation-employee">
-                                        <strong>Carlos Rodríguez</strong>
-                                        <span class="vacation-dept">Operaciones</span>
-                                    </div>
-                                    <div class="vacation-dates">
-                                        <span>05 Feb - 19 Feb 2025</span>
-                                    </div>
-                                </div>
-                                <div class="vacation-item">
-                                    <div class="vacation-employee">
-                                        <strong>Ana Martínez</strong>
-                                        <span class="vacation-dept">Recursos Humanos</span>
-                                    </div>
-                                    <div class="vacation-dates">
-                                        <span>20 Feb - 06 Mar 2025</span>
-                                    </div>
-                                </div>
-                                <div class="vacation-item">
-                                    <div class="vacation-employee">
-                                        <strong>Luis Pérez</strong>
-                                        <span class="vacation-dept">Tecnología</span>
-                                    </div>
-                                    <div class="vacation-dates">
-                                        <span>10 Mar - 24 Mar 2025</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button class="btn btn--naranja w-100">Solicitar Vacaciones</button>
-                        </div>
-                    </aside>
-                </div>
+            <div class="credits">
+                <p>
+                    &copy; 2025 Banco Nacional de Crédito. Todos los derechos
+                    reservados.
+                </p>
             </div>
-        </section>
-    </main>
+        </footer>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container py-3">
-            <div class="text-center">
-                <img src="/placeholder.svg?height=50&width=150" alt="BNC Logo" class="footer__logo">
-                <ul class="foot-menu">
-                    <li><a href="#terminos">Términos y Condiciones</a></li>
-                    <li><a href="#privacidad">Política de Privacidad</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
+        <script src="script.js"></script>
+
+        <!-- Estilos n8n Chat -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css"
+            rel="stylesheet"
+        />
+
+        <style>
+            /* Burbuja flotante */
+            #chat-bubble {
+                position: fixed;
+                bottom: 25px;
+                right: 25px;
+                background-color: #ff8a00;
+                color: #fff;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                font-size: 28px;
+                z-index: 9999;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                transition: transform 0.2s ease;
+            }
+
+            #chat-bubble:hover {
+                transform: scale(1.1);
+            }
+
+            /* Contenedor del chat flotante */
+            #chatbot-container {
+                position: fixed;
+                bottom: 100px;
+                right: 25px;
+                width: 350px;
+                height: 500px;
+                border-radius: 0.5rem;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+                overflow: hidden;
+                z-index: 9999;
+                display: none; /* Oculto inicialmente */
+            }
+
+            #chat-close {
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                cursor: pointer;
+                font-size: 18px;
+                color: #002b61;
+                font-weight: bold;
+                z-index: 10;
+            }
+
+            #chatbot-bnc {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+
+        <!-- Botón burbuja -->
+        <div id="chat-bubble">💬</div>
+
+        <!-- Contenedor del chat flotante -->
+        <div id="chatbot-container">
+            <div id="chat-close">×</div>
+            <div id="chatbot-bnc"></div>
         </div>
-        <div class="credits">
-            <p>&copy; 2025 Banco Nacional de Crédito. Todos los derechos reservados.</p>
-        </div>
-    </footer>
 
-    <script src="script.js"></script>
-<head>
+        <!-- Script n8n Chat -->
+        <script type="module">
+            import { createChat } from "https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js";
 
-  <!-- Estilos n8n Chat -->
-  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+            createChat({
+                webhookUrl:
+                    "https://jgvilchez25.app.n8n.cloud/webhook/146d1294-b0e7-4ad8-8a96-c5880f4428ec/chat",
+                target: "#chatbot-bnc", // 👈 importante
+                mode: "fullscreen",
+                theme: {
+                    primaryColor: "#002b61",
+                    secondaryColor: "#ff8a00",
+                    backgroundColor: "#ffffff",
+                    textColor: "#002b61",
+                    buttonColor: "#ff8a00",
+                    buttonTextColor: "#ffffff",
+                    headerColor: "#002b61",
+                    headerTextColor: "#ffffff",
+                },
+            });
 
-  <style>
-    /* Burbuja flotante */
-    #chat-bubble {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: #ff8a00;
-      color: #fff;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 28px;
-      z-index: 9999;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease;
-    }
+            // Abrir y cerrar burbuja
+            const bubble = document.getElementById("chat-bubble");
+            const container = document.getElementById("chatbot-container");
+            const closeBtn = document.getElementById("chat-close");
 
-    #chat-bubble:hover {
-      transform: scale(1.1);
-    }
+            bubble.addEventListener("click", () => {
+                container.style.display = "block";
+                bubble.style.display = "none";
+            });
 
-    /* Contenedor del chat flotante */
-    #chatbot-container {
-      position: fixed;
-      bottom: 100px;
-      right: 25px;
-      width: 350px;
-      height: 500px;
-      border-radius: 0.5rem;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-      overflow: hidden;
-      z-index: 9999;
-      display: none; /* Oculto inicialmente */
-    }
-
-    #chat-close {
-      position: absolute;
-      top: 5px;
-      right: 10px;
-      cursor: pointer;
-      font-size: 18px;
-      color: #002b61;
-      font-weight: bold;
-      z-index: 10;
-    }
-
-    #chatbot-bnc {
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-
-  <!-- Botón burbuja -->
-  <div id="chat-bubble">💬</div>
-
-  <!-- Contenedor del chat flotante -->
-  <div id="chatbot-container">
-    <div id="chat-close">×</div>
-    <div id="chatbot-bnc"></div>
-  </div>
-
-  <!-- Script n8n Chat -->
-  <script type="module">
-    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-    createChat({
-      webhookUrl: 'https://jgvilchez25.app.n8n.cloud/webhook/146d1294-b0e7-4ad8-8a96-c5880f4428ec/chat',
-      target: '#chatbot-bnc', // 👈 importante
-      mode: 'fullscreen',
-      theme: {
-        primaryColor: '#002b61',
-        secondaryColor: '#ff8a00',
-        backgroundColor: '#ffffff',
-        textColor: '#002b61',
-        buttonColor: '#ff8a00',
-        buttonTextColor: '#ffffff',
-        headerColor: '#002b61',
-        headerTextColor: '#ffffff'
-      },
-    });
-
-    // Abrir y cerrar burbuja
-    const bubble = document.getElementById('chat-bubble');
-    const container = document.getElementById('chatbot-container');
-    const closeBtn = document.getElementById('chat-close');
-
-    bubble.addEventListener('click', () => {
-      container.style.display = 'block';
-      bubble.style.display = 'none';
-    });
-
-    closeBtn.addEventListener('click', () => {
-      container.style.display = 'none';
-      bubble.style.display = 'flex';
-    });
-  </script>
-
-
-</body>
+            closeBtn.addEventListener("click", () => {
+                container.style.display = "none";
+                bubble.style.display = "flex";
+            });
+        </script>
+    </body>
 </html>
